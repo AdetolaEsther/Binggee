@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Tabs, Tab, Button,useTheme,useMediaQuery } from '@mui/material';
-import { NavbarWrapper } from '../styles/Header.module';
+import { NavbarWrapper } from '../styles/Style.module';
 import DrawerContainer from './DrawerContainer';
 
  export const menuItems =[
@@ -37,6 +37,7 @@ const Header = () => {
          
         </Toolbar>
       </AppBar>
+      
     </NavbarWrapper>
   );
 };
