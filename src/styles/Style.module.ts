@@ -11,12 +11,27 @@ letter-spacing: 2px;
 .navLinks, .loginBtn{
     margin-left:auto;
 }
+.navlinks a.active{
+ border-radius:10px;
+ border-top: 1px solid red;
+ border-bottom: 1px solid red;
+ color: #fff;
+ padding: 15px 0;
 
+}
 .links{
  font family: 'Acme', sans-serif;
  font-size: 15px;
+ color: grey;
+ border-radius:10px;
+ transition: transform 0.3s ease-in-out;
+
  &:hover{
- background-color:red;
+   background-color:red;
+   border-radius:10px;
+   transform: scale(1.07);
+   color: black
+
  }
 }
 
@@ -87,7 +102,7 @@ box-shadow: 0 5px 5px -5px rgba(0,0,0,0.5);
     align-items: center;
     flex-direction: column;
     transition: all 0.5s ease-in-out;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
 
     .movieImg { 
       display: flex;
@@ -101,6 +116,9 @@ box-shadow: 0 5px 5px -5px rgba(0,0,0,0.5);
         border-bottom-right-radius: 25px;
         box-shadow: 1px 1px 10px 1px #000;
         padding: 5px;
+        height: 200px;
+        margin-bottom: 0;
+
       }
       
       > span {
@@ -119,6 +137,8 @@ box-shadow: 0 5px 5px -5px rgba(0,0,0,0.5);
         font-size: 12px;
         position: relative;
         bottom: 20px;
+        margin-bottom: 0;
+
       }
     } 
     
@@ -229,13 +249,13 @@ export const CoverPage = styled.div`
     top:0;
     left:0;
     width:100%;
-    height:77%;
+    height:440px;
     background-color: rgba(3,37,65,0.8);
     border-bottom-left-radius: 240px;
     border-bottom-right-radius: 240px;
  }
   >img{
-  height: 300px;
+  height: 440px;
   width: 100%;
   border-bottom-left-radius: 240px;
   border-bottom-right-radius: 240px;
@@ -252,7 +272,7 @@ export const CoverPage = styled.div`
       }
     }
       &::before, img{
-       height: 240px;
+       height: 340px;
       }
   }
       @media(max-width:800){
@@ -280,22 +300,22 @@ export const CoverPage = styled.div`
 export const SearchBar = styled.div`
    >input, 
    >button{
-    margin: auto;
-    outline: none;
-    border: none;
-    border-radius:20px;
+     margin: auto;
+     outline: none;
+     border: none;
+     height:45px;
+     border-radius:20px;
     postion: absolute;
     top: 100%;
     transform: translate(-50%, -50%)
     text-align: center;
    }
     >input{
-    height:45px;
-    width:70%;
+     width:70%;
      box-shadow: 1px 1px 6px 2px grey;
      padding: 10px;
      font-size: 18px;
-     margin: 20px;
+    //  margin: 20px;
 
      &:: placeholder{
         font-size: 14px;
@@ -305,10 +325,11 @@ export const SearchBar = styled.div`
 padding: 0 25px;
 left: 81%;
 font-size:15px;
-background: black;
-color: #fff;
+background: linear-gradient(90deg, #000000, #000000 33%, rgba(7,110,112,1)100%);
+color: grey;
 font-weight: bolder;
-padding: 15px;
+padding: 10px;
 cursor: pointer;
+// margin: 0;
 }
 `;

@@ -34,6 +34,7 @@ const Display: React.FC<DataProps>= ({
 }) => {
 
     const [showItems,setShowItems] = useState<Movie[]>([])
+
     const [currentPage, setCurrentPage] = useState(1)
     const [totalPage, setTotalPage] = useState(1)
     const [loading, setLoading] = useState(false)
@@ -47,8 +48,11 @@ const Display: React.FC<DataProps>= ({
               page: currentPage,
             },
           });
+
+
           const {results, total_page} = response.data;
-          setShowItems(results.slice(0,16));
+
+          setShowItems(results.slice(0,numberOfMovies));
           setTotalPage(total_page);
           setTimeout(() => {
             setLoading(true);
@@ -58,6 +62,9 @@ const Display: React.FC<DataProps>= ({
         }
       };
       fetchMovies();
+
+
+    
     
     },[currentPage, apiEndPoints, numberOfMovies]);
 

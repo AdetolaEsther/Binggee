@@ -1,48 +1,22 @@
-import Display from "./components/Display";
 import Header from "./components/Header";
-import { popular, trending, upcoming } from "./modules/ApilLinks";
-import CoverDisplay from "./components/Cover";
-import coverPicture from "./assets/img.jpg"
+import Home from "./pages/Home";
+import {Routes, Route }from "react-router-dom"
+import NowPlaying from "./pages/NowPlaying";
+import Popular from "./pages/Popular";
+import TvShows from "./pages/TvShows";
 
-
- const itemsProps ={
-  numberOfMovies: 15,
- }
+ 
 function App() {
 
   return (
     < >
       <Header/>  
-      <br /><br /><br />
-      <CoverDisplay title={'Bingee'} 
-      description={'Home of Blockbusters...'} 
-      catchyPhase={'Binge all your favourite movies and Tv-shows here'} 
-      headerImage={coverPicture} 
-      showHearderImage={true} 
-      showSearch={true}/>
-
-      <Display {... itemsProps}
-       apiEndPoints={`${popular}`} 
-       itemHeading ={"Popular Moive"}     
-       showButtons= {true} 
-       tvShowOn= {false}
-       movieOn= {true}
-
-/>
-      <Display {... itemsProps} 
-      apiEndPoints={`${trending}`}
-      itemHeading ={"Trending Moive"}
-      showButtons= {true} 
-      tvShowOn= {false}
-      movieOn= {true}
-/>
-      <Display {... itemsProps} 
-      apiEndPoints={`${upcoming}`}
-      itemHeading ={"Upcoming Moive"}
-      showButtons= {true} 
-      tvShowOn= {false}
-      movieOn= {true}
-/>
+      <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="now_playing" element={<NowPlaying/>} />
+      <Route path="popular" element={<Popular/>} />
+      <Route path="tv_shows" element={<TvShows/>} />
+      </Routes>
     </>
   );
 }
